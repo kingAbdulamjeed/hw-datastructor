@@ -1,35 +1,23 @@
-import java.util.Arrays;
+import org.w3c.dom.Node;
 
 public class Q_Four {
-    public static void main ( String[] args ) {
-
-        int arry1 []={20,30,40,50};
-        int arry2 []={60,70,80,90,100};
-        boolean x = true;
-
-        if (arry1==arry2)
-        {
-            System.out.println ("The Arrys equals");
+    public  boolean equalsDff(CircularlyLinkedList c){
+        Node<E> one = tial.next;
+        Node<E> two = c.tial.next;
+        while (two != c.tial){
+            if (one.element == two.element)
+                break;
+            two =two.next;
         }
+        while (one.element == two.element && two !=c.tial){
 
-        else if (arry1.length == arry2.length)
-        {
-            for (int i = 0; i < arry1.length; i++)
-            {
-                if (arry1[i] != arry2[i])
-                {
-                    x = true;
-                    break;
-                }
-                else
-                    x = false;
-            }
-
-            if (x)
-                System.out.println ("not equals");
-            else
-                System.out.println ("equals");
-
+            one = one.next;
+            two = two.next;
         }
-     }
+        if (one.element != two.element)
+            return false;
+
+               return true;
+
+    }
 }

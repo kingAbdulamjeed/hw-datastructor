@@ -1,25 +1,18 @@
-import java.util.Arrays;
-
-public class Q_Three {
-    public static void main ( String[] args ) {
-        int [] arry1 = {20,30,40,50,60};
-
-        int [] arry2 = {70,80,90,99,88};
-
-        int [] arry3 = new int[arry1.length+arry2.length];
-
-        for (int i = 0; i < arry1.length; i++)
-        {
-            arry3[i] = arry1[i];
+public
+class Q_Three {
+    public boolean equal(CircularlyLinkedList l){
+        Node<E> x = tial.Next;
+        Node<E> y = l.tial.Next;
+        boolean count = false;
+        while (x != tial && y !=l.tial){
+            if (x.element != y.element)
+                return false;
+            x = x.Next;
+            y = y.Next;
         }
-
-        for (int i = 0; i < arry2.length; i++)
-        {
-            arry3[(arry1.length) + i] = arry2[i];
-        }
-
-        System.out.println ( Arrays.toString ( arry3 ) );
-
-
+        if (x == tial && y == l.tial)
+        return true;
+        else
+            return false;
     }
 }
